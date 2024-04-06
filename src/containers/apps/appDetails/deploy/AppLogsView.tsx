@@ -159,7 +159,7 @@ export default class AppLogsView extends ApiComponent<
                                         }}
                                     >
                                         <Tooltip title="View full application logs (not truncated)">
-                                            <NewTabLink url="https://soteria.com/docs/troubleshooting.html#how-to-view-my-applications-log">
+                                            <NewTabLink url="https://visca.dev/docs/troubleshooting.html#how-to-view-my-applications-log">
                                                 <InfoCircleOutlined />
                                             </NewTabLink>
                                         </Tooltip>

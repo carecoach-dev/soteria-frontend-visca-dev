@@ -235,7 +235,7 @@ class PageRoot extends ApiComponent<
                                                 marginRight: 70,
                                             }}
                                         >
-                                            <NewTabLink url="https://soteria.com">
+                                            <NewTabLink url="https://visca.dev">
                                                 Docs
                                             </NewTabLink>
                                         </span>
@@ -324,7 +324,7 @@ class PageRoot extends ApiComponent<
                                         role="menuitem"
                                         style={{ paddingLeft: 24 }}
                                     >
-                                        <NewTabLink url="https://soteria.com">
+                                        <NewTabLink url="https://visca.dev">
                                             <FileTextOutlined />
                                             Docs
                                         </NewTabLink>

@@ -252,7 +252,7 @@ class AppDetails extends ApiComponent<
                                             the original container deletion was
                                             done with a delay. Please consult
                                             the{' '}
-                                            <NewTabLink url="https://soteria.com/docs/persistent-apps.html#removing-persistent-apps">
+                                            <NewTabLink url="https://visca.dev/docs/persistent-apps.html#removing-persistent-apps">
                                                 documentation
                                             </NewTabLink>{' '}
                                             and delete them manually if needed.

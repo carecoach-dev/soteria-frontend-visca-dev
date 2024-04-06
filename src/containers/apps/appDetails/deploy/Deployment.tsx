@@ -172,12 +172,12 @@ export default class Deployment extends ApiComponent<
                     Use CLI deploy command. This is the easiest method as it
                     only requires a simply command like{' '}
                     <code>soteria deploy</code>. Read more about it in{' '}
-                    <NewTabLink url="https://soteria.com/docs/get-started.html#step-4-deploy-the-test-app">
+                    <NewTabLink url="https://visca.dev/docs/get-started.html#step-4-deploy-the-test-app">
                         the docs
                     </NewTabLink>
                     . If you're using CI/CD to run <code>soteria deploy</code>{' '}
                     and you do not wish to use your password, you can use{' '}
-                    <NewTabLink url="https://soteria.com/docs/ci-cd-integration.html#app-tokens">
+                    <NewTabLink url="https://visca.dev/docs/ci-cd-integration.html#app-tokens">
                         app-specific tokens
                     </NewTabLink>
                     .

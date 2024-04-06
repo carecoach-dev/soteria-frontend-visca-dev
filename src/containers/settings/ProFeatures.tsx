@@ -77,7 +77,7 @@ export default class ProFeatures extends ApiComponent<
                     title={
                         <div style={{}}>
                             <a
-                                href="https://pro.soteria.com"
+                                href="https://pro.visca.dev"
                                 target="_blank"
                                 rel="noreferrer"
                             >
@@ -159,7 +159,7 @@ export default class ProFeatures extends ApiComponent<
                         >
                             Enter API Key
                         </Button>
-                        <NewTabLink url="https://pro.soteria.com">
+                        <NewTabLink url="https://pro.visca.dev">
                             <Button
                                 type="primary"
                                 size="large"

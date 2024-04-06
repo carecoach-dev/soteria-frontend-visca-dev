@@ -472,7 +472,7 @@ export default class Dashboard extends ApiComponent<
                                 applications from source code, make sure to have
                                 a look at our
                                 <a
-                                    href="https://soteria.com/docs/sample-apps.html"
+                                    href="https://visca.dev/docs/sample-apps.html"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

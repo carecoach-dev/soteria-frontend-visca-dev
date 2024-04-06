@@ -109,7 +109,7 @@ class CreateNewApp extends Component<
                                 )}
                             </Checkbox>
                             &nbsp;&nbsp;
-                            <NewTabLink url="https://soteria.com/docs/persistent-apps.html">
+                            <NewTabLink url="https://visca.dev/docs/persistent-apps.html">
                                 <Tooltip
                                     title={localize(
                                         'create_new_app.has_persistent_data_tooltip',

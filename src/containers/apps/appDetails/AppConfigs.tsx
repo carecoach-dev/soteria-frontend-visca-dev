@@ -340,7 +340,7 @@ export default class AppConfigs extends Component<
             <div>
                 <h4>
                     Persistent Directories &nbsp;
-                    <NewTabLink url="https://soteria.com/docs/app-configuration.html#persistent-or-not">
+                    <NewTabLink url="https://visca.dev/docs/app-configuration.html#persistent-or-not">
                         <InfoCircleOutlined />
                     </NewTabLink>
                 </h4>
@@ -416,7 +416,7 @@ export default class AppConfigs extends Component<
             <div>
                 <h4>
                     Environmental Variables &nbsp;
-                    <NewTabLink url="https://soteria.com/docs/app-configuration.html#environment-variables">
+                    <NewTabLink url="https://visca.dev/docs/app-configuration.html#environment-variables">
                         <InfoCircleOutlined />
                     </NewTabLink>
                 </h4>
@@ -453,7 +453,7 @@ export default class AppConfigs extends Component<
                 />
                 <h4>
                     Port Mapping &nbsp;
-                    <NewTabLink url="https://soteria.com/docs/app-configuration.html#port-mapping">
+                    <NewTabLink url="https://visca.dev/docs/app-configuration.html#port-mapping">
                         <InfoCircleOutlined />
                     </NewTabLink>
                 </h4>
@@ -536,7 +536,7 @@ export default class AppConfigs extends Component<
                     <Col span={24}>
                         <h4>
                             Pre-Deploy Script
-                            <NewTabLink url="https://soteria.com/docs/pre-deploy-script.html">
+                            <NewTabLink url="https://visca.dev/docs/pre-deploy-script.html">
                                 <InfoCircleOutlined
                                     style={{ paddingLeft: 10 }}
                                 />
@@ -572,7 +572,7 @@ export default class AppConfigs extends Component<
                     <Col span={24}>
                         <h4>
                             Service Update Override
-                            <NewTabLink url="https://soteria.com/docs/service-update-override.html">
+                            <NewTabLink url="https://visca.dev/docs/service-update-override.html">
                                 <InfoCircleOutlined
                                     style={{ paddingLeft: 10 }}
                                 />
@@ -614,7 +614,7 @@ export default class AppConfigs extends Component<
                 <div style={{ height: 30 }} />
                 <h4>
                     Service Tags &nbsp;
-                    <NewTabLink url="https://soteria.com/docs/app-configuration.html#service-tags">
+                    <NewTabLink url="https://visca.dev/docs/app-configuration.html#service-tags">
                         <InfoCircleOutlined />
                     </NewTabLink>
                 </h4>
