@@ -42,9 +42,9 @@ export default class ProFeatures extends ApiComponent<
 
         Promise.resolve()
             .then(function () {
-                const captainInfoPromise = self.apiManager.getCaptainInfo()
+                const soteriaInfoPromise = self.apiManager.getSoteriaInfo()
                 const proFeaturesRequest = self.apiManager.getProFeaturesState()
-                return Promise.all([captainInfoPromise, proFeaturesRequest])
+                return Promise.all([soteriaInfoPromise, proFeaturesRequest])
             })
 
             .then(function (result) {
@@ -77,11 +77,11 @@ export default class ProFeatures extends ApiComponent<
                     title={
                         <div style={{}}>
                             <a
-                                href="https://pro.caprover.com"
+                                href="https://pro.soteria.com"
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <b>CapRover PRO</b>
+                                <b>Soteria PRO</b>
                             </a>
                             &nbsp;&nbsp;
                             <CrownTwoTone twoToneColor="#c27b00" />
@@ -117,7 +117,7 @@ export default class ProFeatures extends ApiComponent<
         return (
             <div>
                 <p>
-                    Upgrade to <b>CapRover PRO</b> to take advantage of premium
+                    Upgrade to <b>Soteria PRO</b> to take advantage of premium
                     features!
                 </p>
                 <ul>
@@ -159,7 +159,7 @@ export default class ProFeatures extends ApiComponent<
                         >
                             Enter API Key
                         </Button>
-                        <NewTabLink url="https://pro.caprover.com">
+                        <NewTabLink url="https://pro.soteria.com">
                             <Button
                                 type="primary"
                                 size="large"

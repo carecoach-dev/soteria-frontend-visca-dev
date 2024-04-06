@@ -91,17 +91,17 @@ export default class OneClickAppConfigPage extends ApiComponent<
                 ) as IOneClickTemplate
             })
             .then(function (data: IOneClickTemplate) {
-                if (`${data.captainVersion}` !== '4') {
+                if (`${data.soteriaVersion}` !== '4') {
                     message.error(
-                        `One-click app version is ${data.captainVersion}, this version supports "v4". Make sure your CapRover is up-to-date with the latest version!!`
+                        `One-click app version is ${data.soteriaVersion}, this version supports "v4". Make sure your Soteria is up-to-date with the latest version!!`
                     )
                     return
                 }
 
-                data.caproverOneClickApp.variables =
-                    data.caproverOneClickApp.variables || []
+                data.soteriaOneClickApp.variables =
+                    data.soteriaOneClickApp.variables || []
                 // Adding app name to all one click apps
-                data.caproverOneClickApp.variables.unshift({
+                data.soteriaOneClickApp.variables.unshift({
                     id: ONE_CLICK_APP_NAME_VAR_NAME,
                     label: 'App Name',
                     description:
@@ -111,12 +111,12 @@ export default class OneClickAppConfigPage extends ApiComponent<
 
                 apiData = data
 
-                return self.apiManager.getCaptainInfo()
+                return self.apiManager.getSoteriaInfo()
             })
-            .then(function (captainInfo) {
+            .then(function (soteriaInfo) {
                 self.setState({
                     apiData: apiData,
-                    rootDomain: captainInfo.rootDomain,
+                    rootDomain: soteriaInfo.rootDomain,
                 })
             })
             .catch(Toaster.createCatcher())
@@ -127,8 +127,8 @@ export default class OneClickAppConfigPage extends ApiComponent<
         const deploymentState = this.state.deploymentState
         const apiData = this.state.apiData
         const displayName =
-            apiData && apiData.caproverOneClickApp.displayName
-                ? apiData.caproverOneClickApp.displayName
+            apiData && apiData.soteriaOneClickApp.displayName
+                ? apiData.soteriaOneClickApp.displayName
                 : self.props.match.params.appName[0].toUpperCase() +
                   self.props.match.params.appName.slice(1)
 
@@ -164,7 +164,7 @@ export default class OneClickAppConfigPage extends ApiComponent<
                             >
                                 <ReactMarkdown remarkPlugins={[gfm]}>
                                     {
-                                        apiData.caproverOneClickApp.instructions
+                                        apiData.soteriaOneClickApp.instructions
                                             .start
                                     }
                                 </ReactMarkdown>
@@ -172,7 +172,7 @@ export default class OneClickAppConfigPage extends ApiComponent<
                             <div style={{ height: 40 }} />
                             <OneClickVariablesSection
                                 oneClickAppVariables={
-                                    apiData.caproverOneClickApp.variables
+                                    apiData.soteriaOneClickApp.variables
                                 }
                                 onNextClicked={(values) => {
                                     const template = Utils.copyObject(
@@ -181,10 +181,10 @@ export default class OneClickAppConfigPage extends ApiComponent<
                                     const valuesAugmented =
                                         Utils.copyObject(values)
 
-                                    template.caproverOneClickApp.variables.push(
+                                    template.soteriaOneClickApp.variables.push(
                                         {
                                             id: ONE_CLICK_ROOT_DOMAIN_VAR_NAME,
-                                            label: 'CapRover root domain',
+                                            label: 'Soteria root domain',
                                         }
                                     )
                                     valuesAugmented[

@@ -100,7 +100,7 @@ export default class TarUploader extends ApiComponent<
                                 Click or drag TAR file to this area to upload
                             </p>
                             <p className="ant-upload-hint">
-                                Must contain <code>captain-definition</code>{' '}
+                                Must contain <code>soteria-definition</code>{' '}
                                 file.
                             </p>
                         </Upload.Dragger>

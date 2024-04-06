@@ -1,5 +1,4 @@
 import { Button, Input, Row } from 'antd'
-import React from 'react'
 import Toaster from '../../../../utils/Toaster'
 import ApiComponent from '../../../global/ApiComponent'
 
@@ -23,7 +22,7 @@ export default abstract class UploaderPlainTextBase extends ApiComponent<
 
     protected abstract getPlaceHolderValue(): string
 
-    protected abstract convertDataToCaptainDefinition(
+    protected abstract convertDataToSoteriaDefinition(
         userEnteredValue: string
     ): string
 
@@ -31,15 +30,15 @@ export default abstract class UploaderPlainTextBase extends ApiComponent<
         return false
     }
 
-    startDeploy(captainDefinitionToBeUploaded: string) {
+    startDeploy(soteriaDefinitionToBeUploaded: string) {
         const self = this
 
         Promise.resolve() //
             .then(function () {
                 self.setState({ uploadInProcess: true })
-                return self.apiManager.uploadCaptainDefinitionContent(
+                return self.apiManager.uploadSoteriaDefinitionContent(
                     self.props.appName,
-                    JSON.parse(captainDefinitionToBeUploaded),
+                    JSON.parse(soteriaDefinitionToBeUploaded),
                     '',
                     true
                 )
@@ -101,7 +100,7 @@ export default abstract class UploaderPlainTextBase extends ApiComponent<
                         type="primary"
                         onClick={() =>
                             self.startDeploy(
-                                self.convertDataToCaptainDefinition(
+                                self.convertDataToSoteriaDefinition(
                                     self.state.userEnteredValue
                                 )
                             )

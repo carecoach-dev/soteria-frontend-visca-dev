@@ -1,7 +1,6 @@
 import { RocketOutlined } from '@ant-design/icons'
 import { Button, Col, Input, message, Row, Tooltip } from 'antd'
 import deepEqual from 'deep-equal'
-import React from 'react'
 import DomUtils from '../../../../utils/DomUtils'
 import Toaster from '../../../../utils/Toaster'
 import Utils from '../../../../utils/Utils'
@@ -14,15 +13,15 @@ import AppVersionTable from './AppVersionTable'
 import BuildLogsView from './BuildLogsView'
 import GitRepoForm from './GitRepoForm'
 import TarUploader from './TarUploader'
-import UploaderPlainTextCaptainDefinition from './UploaderPlainTextCaptainDefinition'
 import UploaderPlainTextDockerfile from './UploaderPlainTextDockerfile'
 import UploaderPlainTextImageName from './UploaderPlainTextImageName'
+import UploaderPlainTextSoteriaDefinition from './UploaderPlainTextSoteriaDefinition'
 
 export default class Deployment extends ApiComponent<
     AppDetailsTabProps,
     {
         dummyVar: undefined
-        forceEditableCaptainDefinitionPath: boolean
+        forceEditableSoteriaDefinitionPath: boolean
         buildLogRecreationId: string
         updatedVersions:
             | { versions: IAppVersion[]; deployedVersion: number }
@@ -35,7 +34,7 @@ export default class Deployment extends ApiComponent<
         super(props)
         this.state = {
             dummyVar: undefined,
-            forceEditableCaptainDefinitionPath: false,
+            forceEditableSoteriaDefinitionPath: false,
             updatedVersions: undefined,
             buildLogRecreationId: '',
         }
@@ -89,7 +88,7 @@ export default class Deployment extends ApiComponent<
     onVersionRollbackRequested(version: IAppVersion) {
         const self = this
         self.apiManager
-            .uploadCaptainDefinitionContent(
+            .uploadSoteriaDefinitionContent(
                 self.props.apiData.appDefinition.appName!,
                 {
                     schemaVersion: 2,
@@ -122,12 +121,12 @@ export default class Deployment extends ApiComponent<
               }
 
         const webhookPushUrlRelativePath = hasPushToken
-            ? `/user/apps/webhooks/triggerbuild?namespace=captain&token=${
+            ? `/user/apps/webhooks/triggerbuild?namespace=soteria&token=${
                   app.appPushWebhook!.pushWebhookToken
               }`
             : ''
 
-        const webhookPushUrlFullPath = `${window.location.protocol}//${this.props.apiData.captainSubDomain}.${this.props.apiData.rootDomain}/api/v2${webhookPushUrlRelativePath}`
+        const webhookPushUrlFullPath = `${window.location.protocol}//${this.props.apiData.soteriaSubDomain}.${this.props.apiData.rootDomain}/api/v2${webhookPushUrlRelativePath}`
 
         return (
             <div>
@@ -172,13 +171,13 @@ export default class Deployment extends ApiComponent<
                 <p>
                     Use CLI deploy command. This is the easiest method as it
                     only requires a simply command like{' '}
-                    <code>caprover deploy</code>. Read more about it in{' '}
-                    <NewTabLink url="https://caprover.com/docs/get-started.html#step-4-deploy-the-test-app">
+                    <code>soteria deploy</code>. Read more about it in{' '}
+                    <NewTabLink url="https://soteria.com/docs/get-started.html#step-4-deploy-the-test-app">
                         the docs
                     </NewTabLink>
-                    . If you're using CI/CD to run <code>caprover deploy</code>{' '}
+                    . If you're using CI/CD to run <code>soteria deploy</code>{' '}
                     and you do not wish to use your password, you can use{' '}
-                    <NewTabLink url="https://caprover.com/docs/ci-cd-integration.html#app-tokens">
+                    <NewTabLink url="https://soteria.com/docs/ci-cd-integration.html#app-tokens">
                         app-specific tokens
                     </NewTabLink>
                     .
@@ -269,7 +268,7 @@ export default class Deployment extends ApiComponent<
                 <p>
                     Enter your repository information in the form and save. Then
                     copy the URL in the box as a webhook on Github, Bitbucket,
-                    Gitlab and etc. Once you push a commit, CapRover starts a
+                    Gitlab and etc. Once you push a commit, Soteria starts a
                     new build.
                     <br />
                 </p>
@@ -347,9 +346,9 @@ export default class Deployment extends ApiComponent<
                 />
                 <div style={{ height: 20 }} />
                 <h4>
-                    <RocketOutlined /> Method 5: Deploy captain-definition file
+                    <RocketOutlined /> Method 5: Deploy soteria-definition file
                 </h4>
-                <UploaderPlainTextCaptainDefinition
+                <UploaderPlainTextSoteriaDefinition
                     appName={app.appName!}
                     onUploadSucceeded={() => self.onUploadSuccess()}
                 />
@@ -369,24 +368,24 @@ export default class Deployment extends ApiComponent<
                         style={{ minWidth: this.props.isMobile ? '100%' : 400 }}
                     >
                         {this.props.isMobile &&
-                            'captain-definition Relative Path'}
+                            'soteria-definition Relative Path'}
                         <Input
                             addonBefore={
                                 !this.props.isMobile &&
-                                'captain-definition Relative Path'
+                                'soteria-definition Relative Path'
                             }
                             type="text"
                             defaultValue={
-                                app.captainDefinitionRelativeFilePath + ''
+                                app.soteriaDefinitionRelativeFilePath + ''
                             }
                             disabled={
-                                !this.state.forceEditableCaptainDefinitionPath
+                                !this.state.forceEditableSoteriaDefinitionPath
                             }
                             onChange={(e) => {
                                 const newApiData = Utils.copyObject(
                                     this.props.apiData
                                 )
-                                newApiData.appDefinition.captainDefinitionRelativeFilePath =
+                                newApiData.appDefinition.soteriaDefinitionRelativeFilePath =
                                     e.target.value
                                 this.props.updateApiData(newApiData)
                             }}
@@ -399,17 +398,17 @@ export default class Deployment extends ApiComponent<
                                 marginTop: this.props.isMobile ? 8 : 0,
                             }}
                         >
-                            <Tooltip title="You shouldn't need to change this path unless you have a repository with multiple captain-definition files (mono repos). Read docs for captain definition before editing this">
+                            <Tooltip title="You shouldn't need to change this path unless you have a repository with multiple soteria-definition files (mono repos). Read docs for soteria definition before editing this">
                                 <Button
                                     type="default"
                                     block={this.props.isMobile}
                                     disabled={
                                         this.state
-                                            .forceEditableCaptainDefinitionPath
+                                            .forceEditableSoteriaDefinitionPath
                                     }
                                     onClick={() =>
                                         this.setState({
-                                            forceEditableCaptainDefinitionPath:
+                                            forceEditableSoteriaDefinitionPath:
                                                 true,
                                         })
                                     }
@@ -425,7 +424,7 @@ export default class Deployment extends ApiComponent<
                                 block={this.props.isMobile}
                                 disabled={
                                     !this.state
-                                        .forceEditableCaptainDefinitionPath
+                                        .forceEditableSoteriaDefinitionPath
                                 }
                                 type="primary"
                                 onClick={() =>

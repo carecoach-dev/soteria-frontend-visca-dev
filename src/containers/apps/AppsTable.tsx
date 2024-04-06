@@ -231,7 +231,7 @@ class AppsTable extends Component<
                 let lastDeployTime = ''
 
                 if (versionFound.length === 0) {
-                    // See https://github.com/caprover/caprover-frontend/issues/56
+                    // See https://github.com/visca-dev/soteria-frontend/issues/56
                     // This can happen when user creates a new app while a build is in progress.
                     // This results in app.versions being an empty array until the 0th version gets deployed.
                     Logger.error(

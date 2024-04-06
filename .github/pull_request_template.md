@@ -1,6 +1,6 @@
 First of all, thank you for your contribution! 😄
 
-Please make sure you have read [contribution guidelines](https://github.com/caprover/caprover/blob/master/CONTRIBUTING.md#before-contributing). 
+Please make sure you have read [contribution guidelines](https://github.com/visca-dev/soteria/blob/master/CONTRIBUTING.md#before-contributing). 
 
 
 

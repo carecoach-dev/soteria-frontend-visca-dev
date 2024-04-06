@@ -3,9 +3,9 @@ import { message } from 'antd'
 export default class Toaster {
     static toastError(error: any) {
         let errorMessage = 'Something bad happened.'
-        if (error.captainStatus) {
-            let errorDescription = error.captainMessage || errorMessage
-            errorMessage = `${error.captainStatus} : ${errorDescription}`
+        if (error.soteriaStatus) {
+            let errorDescription = error.soteriaMessage || errorMessage
+            errorMessage = `${error.soteriaStatus} : ${errorDescription}`
         }
         message.error(errorMessage)
         if (!!process.env.REACT_APP_IS_DEBUG) console.error(error)

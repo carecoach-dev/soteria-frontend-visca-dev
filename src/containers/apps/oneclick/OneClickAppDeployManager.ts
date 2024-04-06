@@ -48,10 +48,10 @@ export default class OneClickAppDeployManager {
 
         for (
             let index = 0;
-            index < template.caproverOneClickApp.variables.length;
+            index < template.soteriaOneClickApp.variables.length;
             index++
         ) {
-            const element = template.caproverOneClickApp.variables[index]
+            const element = template.soteriaOneClickApp.variables[index]
             stringified = replaceWith(
                 element.id,
                 values[element.id] || '',
@@ -119,7 +119,7 @@ export default class OneClickAppDeployManager {
                             currentStep,
                             successMessage:
                                 currentStep >= stepsTexts.length
-                                    ? self.template!.caproverOneClickApp
+                                    ? self.template!.soteriaOneClickApp
                                           .instructions.end
                                     : undefined,
                         })

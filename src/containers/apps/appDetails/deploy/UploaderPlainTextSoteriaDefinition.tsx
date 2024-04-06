@@ -1,6 +1,6 @@
 import UploaderPlainTextBase from './UploaderPlainTextBase'
 
-export default class UploaderPlainTextCaptainDefinition extends UploaderPlainTextBase {
+export default class UploaderPlainTextSoteriaDefinition extends UploaderPlainTextBase {
     protected getPlaceHolderValue() {
         return `{
     "schemaVersion" :2 ,
@@ -8,7 +8,7 @@ export default class UploaderPlainTextCaptainDefinition extends UploaderPlainTex
 }`
     }
 
-    protected convertDataToCaptainDefinition(userEnteredValue: string) {
+    protected convertDataToSoteriaDefinition(userEnteredValue: string) {
         return userEnteredValue.trim()
     }
 }

@@ -35,7 +35,7 @@ export default class Dashboard extends ApiComponent<
         const self = this
         self.setState({ isLoading: true, apiData: undefined })
         return this.apiManager
-            .getCaptainInfo()
+            .getSoteriaInfo()
             .then(function (data: any) {
                 self.setState({ apiData: data })
             })
@@ -83,7 +83,7 @@ export default class Dashboard extends ApiComponent<
                             onOk() {
                                 if (isUsingHttp) {
                                     window.location.replace(
-                                        `https://${self.state.apiData.captainSubDomain}.${self.state.apiData.rootDomain}`
+                                        `https://${self.state.apiData.soteriaSubDomain}.${self.state.apiData.rootDomain}`
                                     )
                                 }
                             },
@@ -119,7 +119,7 @@ export default class Dashboard extends ApiComponent<
                         content: (
                             <div>
                                 <p>
-                                    CapRover uses{' '}
+                                    Soteria uses{' '}
                                     <NewTabLink url="https://letsencrypt.org/">
                                         Let&#39;s Encrypt
                                     </NewTabLink>{' '}
@@ -135,7 +135,7 @@ export default class Dashboard extends ApiComponent<
                                     is to go one level deeper and setup your
                                     root domain. For example, if you own{' '}
                                     <code>example.com</code>, use{' '}
-                                    <code>*.caprover-root.example.com</code> as
+                                    <code>*.soteria-root.example.com</code> as
                                     your root domain. This will allow you to
                                     better manage your subdomains, do not use{' '}
                                     <code>*.example.com</code> as your root
@@ -246,7 +246,7 @@ export default class Dashboard extends ApiComponent<
                     ),
                     onOk() {
                         window.location.replace(
-                            `http://${self.state.apiData.captainSubDomain}.${rootDomain}`
+                            `http://${self.state.apiData.soteriaSubDomain}.${rootDomain}`
                         )
                     },
                 })
@@ -295,24 +295,24 @@ export default class Dashboard extends ApiComponent<
         return (
             <Row justify="center">
                 <Col xs={{ span: 23 }} lg={{ span: 16 }}>
-                    <Card title="CapRover Root Domain Configurations">
+                    <Card title="Soteria Root Domain Configurations">
                         <div>
                             <p>
-                                The very first thing that CapRover needs is a
+                                The very first thing that Soteria needs is a
                                 root domain. For example, if you own{' '}
                                 <i>myawesomecompany.com</i>, you can use{' '}
-                                <i>captain.myawesomecompany.com</i> or{' '}
+                                <i>soteria.myawesomecompany.com</i> or{' '}
                                 <i>foo.bar.myawesomecompany.com</i> as your root
                                 domain. First, you need to make sure that the ip
                                 address for all subdomains of the root domain
-                                resolve to the CapRover ip address. To do this,
+                                resolve to the Soteria ip address. To do this,
                                 go to the DNS settings in your domain provider
                                 website, and set a wild card A entry.
                                 <br /> For example: <b> Type:</b> <u>A</u>,{' '}
-                                <b>Name (or host):</b> <u>*.caprover-root</u>,
+                                <b>Name (or host):</b> <u>*.soteria-root</u>,
                                 <b> IP (or Points to):</b>{' '}
                                 <u>110.120.130.140</u> where this is the IP
-                                address of your CapRover machine.
+                                address of your Soteria machine.
                             </p>
                             <p>
                                 <i>
@@ -394,7 +394,7 @@ export default class Dashboard extends ApiComponent<
         return (
             <Row justify="center">
                 <Col xs={{ span: 23 }} lg={{ span: 16 }}>
-                    <Card title="CapRover Initial Setup">
+                    <Card title="Soteria Initial Setup">
                         <div>
                             <h3>
                                 Congratulations!{' '}
@@ -403,13 +403,13 @@ export default class Dashboard extends ApiComponent<
                                 </span>
                             </h3>
                             <p>
-                                <b /> You have installed CapRover successfully!{' '}
+                                <b /> You have installed Soteria successfully!{' '}
                                 <b>
                                     But you still need to assign a domain and
                                     finish the HTTPS setup to fully set up
-                                    CapRover!{' '}
+                                    Soteria!{' '}
                                 </b>
-                                You can set up your CapRover instance in two
+                                You can set up your Soteria instance in two
                                 ways:
                             </p>
 
@@ -418,11 +418,11 @@ export default class Dashboard extends ApiComponent<
                                     <b>Command Line Tool (RECOMMENDED): </b> On
                                     your local machine, simply run
                                     <br />
-                                    <code>npm i -g caprover</code>
+                                    <code>npm i -g soteria</code>
                                     <br />
                                     followed by
                                     <br />
-                                    <code>caprover serversetup</code>. Then
+                                    <code>soteria serversetup</code>. Then
                                     follow the guide.
                                 </li>
                                 <li>
@@ -449,7 +449,7 @@ export default class Dashboard extends ApiComponent<
         return (
             <Row justify="center">
                 <Col xs={{ span: 23 }} lg={{ span: 16 }}>
-                    <Card title="CapRover">
+                    <Card title="Soteria">
                         <div>
                             <h3>
                                 Congratulations!{' '}
@@ -458,9 +458,9 @@ export default class Dashboard extends ApiComponent<
                                 </span>
                             </h3>
                             <p>
-                                You have installed and set CapRover up
+                                You have installed and set Soteria up
                                 successfully! You can now deploy your apps!
-                                Remember, with CapRover, you can deploy
+                                Remember, with Soteria, you can deploy
                                 applications from source code (such as Node.js,
                                 PHP, Java, Ruby, Python etc), and you can also
                                 deploy ready to go applications such as MySQL,
@@ -472,7 +472,7 @@ export default class Dashboard extends ApiComponent<
                                 applications from source code, make sure to have
                                 a look at our
                                 <a
-                                    href="https://caprover.com/docs/sample-apps.html"
+                                    href="https://soteria.com/docs/sample-apps.html"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

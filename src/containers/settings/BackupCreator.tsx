@@ -1,6 +1,5 @@
 import { CloudDownloadOutlined } from '@ant-design/icons'
 import { Button, message, Row } from 'antd'
-import React from 'react'
 import Toaster from '../../utils/Toaster'
 import ApiComponent from '../global/ApiComponent'
 import CenteredSpinner from '../global/CenteredSpinner'
@@ -29,7 +28,7 @@ export default class BackupCreator extends ApiComponent<
                 let link = document.createElement('a') // create 'a' element
                 link.setAttribute(
                     'href',
-                    `${self.apiManager.getApiBaseUrl()}/downloads/?namespace=captain&downloadToken=${encodeURIComponent(
+                    `${self.apiManager.getApiBaseUrl()}/downloads/?namespace=soteria&downloadToken=${encodeURIComponent(
                         data.downloadToken
                     )}`
                 )
@@ -53,7 +52,7 @@ export default class BackupCreator extends ApiComponent<
         return (
             <div>
                 <p>
-                    Create a backup of CapRover configs in order to be able to
+                    Create a backup of Soteria configs in order to be able to
                     spin up a clone of this server. Note that your application
                     data (volumes, and images) are not part of this backup. This
                     backup only includes the server configuration details, such

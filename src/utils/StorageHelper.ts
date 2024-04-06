@@ -9,10 +9,10 @@ const sessionStorage = window.sessionStorage
     ? window.sessionStorage
     : fallbackNoOps
 
-const AUTH_KEY = 'CAPROVER_AUTH_KEY'
-const SIDER_COLLAPSED_STATE = 'CAPROVER_SIDER_COLLAPSED_STATE'
-const DARK_MODE = 'CAPROVER_DARK_MODE'
-const LANGUAGE = 'CAPROVER_LANGUAGE'
+const AUTH_KEY = 'SOTERIA_AUTH_KEY'
+const SIDER_COLLAPSED_STATE = 'SOTERIA_SIDER_COLLAPSED_STATE'
+const DARK_MODE = 'SOTERIA_DARK_MODE'
+const LANGUAGE = 'SOTERIA_LANGUAGE'
 
 class StorageHelper {
     getAuthKeyFromStorage() {

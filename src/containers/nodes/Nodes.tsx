@@ -1,5 +1,4 @@
 import { Alert, Col, Divider, message, Row } from 'antd'
-import React from 'react'
 import { connect } from 'react-redux'
 import Logger from '../../utils/Logger'
 import Toaster from '../../utils/Toaster'
@@ -50,7 +49,7 @@ class CurrentNodes extends ApiComponent<
                 nodeToAdd.remoteNodeIpAddress,
                 nodeToAdd.sshPort,
                 nodeToAdd.sshUser,
-                nodeToAdd.captainIpAddress
+                nodeToAdd.soteriaIpAddress
             )
             .then(function () {
                 message.success('Node added successfully!')

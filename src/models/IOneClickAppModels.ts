@@ -26,8 +26,8 @@ export interface IDockerComposeService {
     depends_on?: string[]
     hostname?: string
 
-    // These are CapRover property, not DockerCompose. We use this instead of image if we need to extend the image.
-    caproverExtra?: {
+    // These are Soteria property, not DockerCompose. We use this instead of image if we need to extend the image.
+    soteriaExtra?: {
         dockerfileLines?: string[]
         containerHttpPort: number
         notExposeAsWebApp: boolean // This is actually a string "true", make sure to double negate!
@@ -37,8 +37,8 @@ export interface IDockerComposeService {
 
 export interface IOneClickTemplate {
     services: IHashMapGeneric<IDockerComposeService>
-    captainVersion: number
-    caproverOneClickApp: {
+    soteriaVersion: number
+    soteriaOneClickApp: {
         instructions: {
             start: string
             end: string

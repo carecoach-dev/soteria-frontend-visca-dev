@@ -2,9 +2,9 @@ import axios from 'axios'
 import ErrorFactory from '../utils/ErrorFactory'
 import Logger from '../utils/Logger'
 
-let TOKEN_HEADER = 'x-captain-auth'
+let TOKEN_HEADER = 'x-soteria-auth'
 let NAMESPACE = 'x-namespace'
-let CAPTAIN = 'captain'
+let SOTERIA = 'soteria'
 
 export default class HttpClient {
     public readonly GET = 'GET'
@@ -22,7 +22,7 @@ export default class HttpClient {
     createHeaders() {
         let headers: any = {}
         if (this.authToken) headers[TOKEN_HEADER] = this.authToken
-        headers[NAMESPACE] = CAPTAIN
+        headers[NAMESPACE] = SOTERIA
 
         // check user/appData or apiManager.uploadAppData before changing this signature.
         return headers

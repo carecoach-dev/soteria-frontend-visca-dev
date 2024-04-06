@@ -1,12 +1,11 @@
 import { CloudDownloadOutlined } from '@ant-design/icons'
 import { Alert, Button, Row } from 'antd'
-import React from 'react'
 import { IVersionInfo } from '../../models/IVersionInfo'
 import Toaster from '../../utils/Toaster'
 import ApiComponent from '../global/ApiComponent'
 import CenteredSpinner from '../global/CenteredSpinner'
 import ErrorRetry from '../global/ErrorRetry'
-import ReloadCaptainModal from './ReloadCaptainModal'
+import ReloadSoteriaModal from './ReloadSoteriaModal'
 
 export default class CheckUpdate extends ApiComponent<
     {
@@ -72,11 +71,11 @@ export default class CheckUpdate extends ApiComponent<
         return (
             <div>
                 <p>
-                    CapRover allows in-place updates to be installed. However,
-                    always read the change logs before updating your CapRover.
+                    Soteria allows in-place updates to be installed. However,
+                    always read the change logs before updating your Soteria.
                     There might be breaking changes that you need to be aware
                     of. The update usually takes around 60 seconds and your
-                    CapRover may become unresponsive until the update process is
+                    Soteria may become unresponsive until the update process is
                     finished. Your apps will stay functional and responsive
                     during this time, except for a very short period of 10
                     seconds or less.
@@ -116,12 +115,12 @@ export default class CheckUpdate extends ApiComponent<
 
                 <div className={!versionInfo.canUpdate ? '' : 'hide-on-demand'}>
                     <Alert
-                        message="Your CapRover is the latest version."
+                        message="Your Soteria is the latest version."
                         type="info"
                     />
                 </div>
 
-                <ReloadCaptainModal
+                <ReloadSoteriaModal
                     isRefreshTimerActivated={self.state.isRefreshTimerActivated}
                 >
                     <div>
@@ -130,7 +129,7 @@ export default class CheckUpdate extends ApiComponent<
                             your server connection speed.
                         </p>
                         <p>
-                            Your CapRover dashboard is not functional during the
+                            Your Soteria dashboard is not functional during the
                             update. Please wait until this page is refreshed
                             automatically.
                         </p>
@@ -142,7 +141,7 @@ export default class CheckUpdate extends ApiComponent<
                         <br />
                         <br />
                     </div>
-                </ReloadCaptainModal>
+                </ReloadSoteriaModal>
             </div>
         )
     }

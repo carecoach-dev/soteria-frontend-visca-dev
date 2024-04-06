@@ -1,6 +1,6 @@
 import ApiManager from '../../../api/ApiManager'
-import { ICaptainDefinition } from '../../../models/ICaptainDefinition'
 import { IDockerComposeService } from '../../../models/IOneClickAppModels'
+import { ISoteriaDefinition } from '../../../models/ISoteriaDefinition'
 import DockerComposeToServiceOverride from '../../../utils/DockerComposeToServiceOverride'
 import Utils from '../../../utils/Utils'
 import { IAppDef } from '../AppDefinition'
@@ -99,22 +99,22 @@ export default class OneClickAppDeploymentHelper {
                         appDef.serviceUpdateOverride = overrideYaml
                     }
 
-                    if (!!dockerComposeService.caproverExtra) {
+                    if (!!dockerComposeService.soteriaExtra) {
                         if (
-                            dockerComposeService.caproverExtra.containerHttpPort
+                            dockerComposeService.soteriaExtra.containerHttpPort
                         ) {
                             appDef.containerHttpPort =
-                                dockerComposeService.caproverExtra.containerHttpPort
+                                dockerComposeService.soteriaExtra.containerHttpPort
                         }
 
                         if (
-                            !!dockerComposeService.caproverExtra
+                            !!dockerComposeService.soteriaExtra
                                 .notExposeAsWebApp
                         ) {
                             appDef.notExposeAsWebApp = true
                         }
                         if (
-                            !!dockerComposeService.caproverExtra
+                            !!dockerComposeService.soteriaExtra
                                 .websocketSupport
                         ) {
                             appDef.websocketSupport = true
@@ -132,20 +132,20 @@ export default class OneClickAppDeploymentHelper {
     ) {
         const self = this
         return Promise.resolve().then(function () {
-            let captainDefinition: ICaptainDefinition = {
+            let soteriaDefinition: ISoteriaDefinition = {
                 schemaVersion: 2,
             }
 
             if (dockerComposeService.image) {
-                captainDefinition.imageName = dockerComposeService.image
+                soteriaDefinition.imageName = dockerComposeService.image
             } else {
-                captainDefinition.dockerfileLines =
-                    dockerComposeService.caproverExtra?.dockerfileLines
+                soteriaDefinition.dockerfileLines =
+                    dockerComposeService.soteriaExtra?.dockerfileLines
             }
 
-            return self.apiManager.uploadCaptainDefinitionContent(
+            return self.apiManager.uploadSoteriaDefinitionContent(
                 appName,
-                captainDefinition,
+                soteriaDefinition,
                 '',
                 false
             )

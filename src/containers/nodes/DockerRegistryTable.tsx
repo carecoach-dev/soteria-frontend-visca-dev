@@ -66,7 +66,7 @@ export default class DockerRegistryTable extends Component<
     editRegistry(dockerRegistry: IRegistryInfo) {
         if (dockerRegistry.registryType === IRegistryTypes.LOCAL_REG) {
             message.warn(
-                'You cannot edit the self hosted registry. It is managed by CapRover.'
+                'You cannot edit the self hosted registry. It is managed by Soteria.'
             )
             return
         }

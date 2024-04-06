@@ -215,7 +215,7 @@ class PageRoot extends ApiComponent<
                                                     marginRight: 10,
                                                 }}
                                             />
-                                            CapRover
+                                            Soteria
                                             {self.createUpdateAvailableIfNeeded()}
                                         </h3>
                                     </div>
@@ -224,7 +224,7 @@ class PageRoot extends ApiComponent<
                             {!self.props.isMobile && (
                                 <Col span={12}>
                                     <Row justify="end">
-                                        <NewTabLink url="https://github.com/caprover/caprover">
+                                        <NewTabLink url="https://github.com/visca-dev/soteria">
                                             <span style={{ marginRight: 20 }}>
                                                 GitHub
                                             </span>
@@ -235,7 +235,7 @@ class PageRoot extends ApiComponent<
                                                 marginRight: 70,
                                             }}
                                         >
-                                            <NewTabLink url="https://caprover.com">
+                                            <NewTabLink url="https://soteria.com">
                                                 Docs
                                             </NewTabLink>
                                         </span>
@@ -313,7 +313,7 @@ class PageRoot extends ApiComponent<
                                         role="menuitem"
                                         style={{ paddingLeft: 24 }}
                                     >
-                                        <NewTabLink url="https://github.com/caprover/caprover">
+                                        <NewTabLink url="https://github.com/visca-dev/soteria">
                                             <GithubOutlined />
                                             GitHub
                                         </NewTabLink>
@@ -324,7 +324,7 @@ class PageRoot extends ApiComponent<
                                         role="menuitem"
                                         style={{ paddingLeft: 24 }}
                                     >
-                                        <NewTabLink url="https://caprover.com">
+                                        <NewTabLink url="https://soteria.com">
                                             <FileTextOutlined />
                                             Docs
                                         </NewTabLink>

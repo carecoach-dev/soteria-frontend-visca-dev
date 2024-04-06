@@ -1,4 +1,4 @@
-import { ICaptainDefinition } from '../../../../models/ICaptainDefinition'
+import { ISoteriaDefinition } from '../../../../models/ISoteriaDefinition'
 import UploaderPlainTextBase from './UploaderPlainTextBase'
 
 export default class UploaderPlainTextImageName extends UploaderPlainTextBase {
@@ -10,8 +10,8 @@ export default class UploaderPlainTextImageName extends UploaderPlainTextBase {
         return true
     }
 
-    protected convertDataToCaptainDefinition(userEnteredValue: string) {
-        const capDefinition: ICaptainDefinition = {
+    protected convertDataToSoteriaDefinition(userEnteredValue: string) {
+        const capDefinition: ISoteriaDefinition = {
             schemaVersion: 2,
             imageName: userEnteredValue.trim(),
         }

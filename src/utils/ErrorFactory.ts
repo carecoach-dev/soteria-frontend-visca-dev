@@ -6,7 +6,7 @@ class ErrorFactory {
     public readonly OK_PARTIALLY = 102
 
     public readonly STATUS_ERROR_GENERIC = 1000
-    public readonly STATUS_ERROR_CAPTAIN_NOT_INITIALIZED = 1001
+    public readonly STATUS_ERROR_SOTERIA_NOT_INITIALIZED = 1001
     public readonly STATUS_ERROR_USER_NOT_INITIALIZED = 1101
     public readonly STATUS_ERROR_NOT_AUTHORIZED = 1102
     public readonly STATUS_ERROR_ALREADY_EXIST = 1103
@@ -26,8 +26,8 @@ class ErrorFactory {
 
     createError(status: number, message: string) {
         let e = new Error(message || 'null') as any
-        e.captainStatus = status
-        e.captainMessage = message
+        e.soteriaStatus = status
+        e.soteriaMessage = message
         return e
     }
 

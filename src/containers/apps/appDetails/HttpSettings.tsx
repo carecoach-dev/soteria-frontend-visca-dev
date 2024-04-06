@@ -592,9 +592,9 @@ export default class HttpSettings extends Component<
             <div>
                 <p>
                     Your app is internally available as{' '}
-                    <code>srv-captain--{app.appName}</code> to other Captain
+                    <code>srv-soteria--{app.appName}</code> to other Soteria
                     apps. In case of web-app, it is accessible via{' '}
-                    <code>{`http://srv-captain--${app.appName}`}</code> from
+                    <code>{`http://srv-soteria--${app.appName}`}</code> from
                     other apps.
                 </p>
                 <br />

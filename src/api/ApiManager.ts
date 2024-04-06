@@ -1,5 +1,4 @@
 import { IAppDef } from '../containers/apps/AppDefinition'
-import { ICaptainDefinition } from '../models/ICaptainDefinition'
 import {
     IProConfig,
     IProFeatures,
@@ -7,6 +6,7 @@ import {
     TwoFactorAuthResponse,
 } from '../models/IProFeatures'
 import { IRegistryInfo } from '../models/IRegistryInfo'
+import { ISoteriaDefinition } from '../models/ISoteriaDefinition'
 import { IVersionInfo } from '../models/IVersionInfo'
 import ErrorFactory from '../utils/ErrorFactory'
 import Logger from '../utils/Logger'
@@ -85,9 +85,9 @@ export default class ApiManager {
                 // Upon wrong password or back-off error, we force logout the user
                 // to avoid getting stuck with wrong password loop
                 if (
-                    error.captainStatus + '' ===
+                    error.soteriaStatus + '' ===
                         ErrorFactory.STATUS_PASSWORD_BACK_OFF + '' ||
-                    error.captainStatus + '' ===
+                    error.soteriaStatus + '' ===
                         ErrorFactory.STATUS_WRONG_PASSWORD + ''
                 ) {
                     self.setAuthToken('')
@@ -143,7 +143,7 @@ export default class ApiManager {
             .then(http.fetch(http.POST, '/user/pro/otp', data))
     }
 
-    getCaptainInfo() {
+    getSoteriaInfo() {
         const http = this.http
 
         return Promise.resolve() //
@@ -221,9 +221,9 @@ export default class ApiManager {
             )
     }
 
-    uploadCaptainDefinitionContent(
+    uploadSoteriaDefinitionContent(
         appName: string,
-        captainDefinition: ICaptainDefinition,
+        soteriaDefinition: ISoteriaDefinition,
         gitHash: string,
         detached: boolean
     ) {
@@ -237,8 +237,8 @@ export default class ApiManager {
                         detached ? '?detached=1' : ''
                     }`,
                     {
-                        captainDefinitionContent:
-                            JSON.stringify(captainDefinition),
+                        soteriaDefinitionContent:
+                            JSON.stringify(soteriaDefinition),
                         gitHash,
                     }
                 )
@@ -247,8 +247,8 @@ export default class ApiManager {
 
     updateConfigAndSave(appName: string, appDefinition: IAppDef) {
         let instanceCount = appDefinition.instanceCount
-        let captainDefinitionRelativeFilePath =
-            appDefinition.captainDefinitionRelativeFilePath
+        let soteriaDefinitionRelativeFilePath =
+            appDefinition.soteriaDefinitionRelativeFilePath
         let envVars = appDefinition.envVars
         let notExposeAsWebApp = appDefinition.notExposeAsWebApp
         let forceSsl = appDefinition.forceSsl
@@ -273,8 +273,8 @@ export default class ApiManager {
                 http.fetch(http.POST, '/user/apps/appDefinitions/update', {
                     appName: appName,
                     instanceCount: instanceCount,
-                    captainDefinitionRelativeFilePath:
-                        captainDefinitionRelativeFilePath,
+                    soteriaDefinitionRelativeFilePath:
+                        soteriaDefinitionRelativeFilePath,
                     notExposeAsWebApp: notExposeAsWebApp,
                     forceSsl: forceSsl,
                     websocketSupport: websocketSupport,
@@ -476,14 +476,14 @@ export default class ApiManager {
             .then(http.fetch(http.GET, '/user/system/nginxconfig', {}))
     }
 
-    setNginxConfig(customBase: string, customCaptain: string) {
+    setNginxConfig(customBase: string, customSoteria: string) {
         const http = this.http
 
         return Promise.resolve() //
             .then(
                 http.fetch(http.POST, '/user/system/nginxconfig', {
                     baseConfig: { customValue: customBase },
-                    captainConfig: { customValue: customCaptain },
+                    soteriaConfig: { customValue: customSoteria },
                 })
             )
     }
@@ -658,7 +658,7 @@ export default class ApiManager {
         remoteNodeIpAddress: string,
         sshPort: string,
         sshUser: string,
-        captainIpAddress: string
+        soteriaIpAddress: string
     ) {
         const http = this.http
 
@@ -670,7 +670,7 @@ export default class ApiManager {
                     remoteNodeIpAddress,
                     sshPort,
                     sshUser,
-                    captainIpAddress,
+                    soteriaIpAddress,
                 })
             )
     }

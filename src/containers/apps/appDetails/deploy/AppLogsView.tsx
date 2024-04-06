@@ -5,7 +5,6 @@ import {
     UpCircleOutlined,
 } from '@ant-design/icons'
 import { Row, Tooltip } from 'antd'
-import React from 'react'
 import Utils from '../../../../utils/Utils'
 import ApiComponent from '../../../global/ApiComponent'
 import ClickableLink from '../../../global/ClickableLink'
@@ -38,7 +37,7 @@ export default class AppLogsView extends ApiComponent<
             '00000000',
             '01000000',
             '02000000',
-            '03000000', // This is not in the Docker docs, but can actually happen when the log stream is broken https://github.com/caprover/caprover/issues/366
+            '03000000', // This is not in the Docker docs, but can actually happen when the log stream is broken https://github.com/visca-dev/soteria/issues/366
         ]
         const ansiRegex = Utils.getAnsiColorRegex()
         this.apiManager
@@ -160,7 +159,7 @@ export default class AppLogsView extends ApiComponent<
                                         }}
                                     >
                                         <Tooltip title="View full application logs (not truncated)">
-                                            <NewTabLink url="https://caprover.com/docs/troubleshooting.html#how-to-view-my-applications-log">
+                                            <NewTabLink url="https://soteria.com/docs/troubleshooting.html#how-to-view-my-applications-log">
                                                 <InfoCircleOutlined />
                                             </NewTabLink>
                                         </Tooltip>

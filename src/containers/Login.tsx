@@ -52,7 +52,7 @@ export default class Login extends ApiComponent<RouteComponentProps<any>, any> {
             })
             .catch((error) => {
                 if (
-                    error.captainStatus ===
+                    error.soteriaStatus ===
                     ErrorFactory.STATUS_ERROR_OTP_REQUIRED
                 ) {
                     self.setState({
@@ -84,7 +84,7 @@ export default class Login extends ApiComponent<RouteComponentProps<any>, any> {
                     <Card
                         title={localize(
                             'login_form.cap_rover',
-                            'CapRover Login'
+                            'Soteria Login'
                         )}
                         style={{ width: 380 }}
                         extra={

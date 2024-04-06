@@ -46,7 +46,7 @@ const DEPLOYMENT = 'DEPLOYMENT'
 export interface SingleAppApiData {
     appDefinition: IAppDef
     rootDomain: string
-    captainSubDomain: string
+    soteriaSubDomain: string
     defaultNginxConfig: string
 }
 
@@ -181,7 +181,7 @@ class AppDetails extends ApiComponent<
                     </p>
                     <p className={allVolumes.length ? '' : 'hide-on-demand'}>
                         Please select the volumes you want to delete. Note that
-                        if any of the volumes are being used by other CapRover
+                        if any of the volumes are being used by other Soteria
                         apps, they will not be deleted even if you select them.{' '}
                         <b>Note: </b>deleting volumes takes more than 10
                         seconds, please be patient
@@ -252,7 +252,7 @@ class AppDetails extends ApiComponent<
                                             the original container deletion was
                                             done with a delay. Please consult
                                             the{' '}
-                                            <NewTabLink url="https://caprover.com/docs/persistent-apps.html#removing-persistent-apps">
+                                            <NewTabLink url="https://soteria.com/docs/persistent-apps.html#removing-persistent-apps">
                                                 documentation
                                             </NewTabLink>{' '}
                                             and delete them manually if needed.
@@ -613,7 +613,7 @@ class AppDetails extends ApiComponent<
                             apiData: {
                                 appDefinition: element,
                                 rootDomain: data.rootDomain,
-                                captainSubDomain: data.captainSubDomain,
+                                soteriaSubDomain: data.soteriaSubDomain,
                                 defaultNginxConfig: data.defaultNginxConfig,
                             },
                         })

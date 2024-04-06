@@ -8,12 +8,17 @@
     },
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.organizeImports": true
+        "source.organizeImports": "explicit"
     },
     "typescript.referencesCodeLens.enabled": true,
     "tslint.ignoreDefinitionFiles": false,
     "tslint.autoFixOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "tslint.exclude": "**/node_modules/**/*",
-    "cSpell.words": ["Jsonifier", "csrf", "definitelytyped", "promisified"]
+    "cSpell.words": [
+        "Jsonifier",
+        "csrf",
+        "definitelytyped",
+        "promisified"
+    ]
 }

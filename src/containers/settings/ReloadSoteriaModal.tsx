@@ -1,7 +1,7 @@
 import { Modal } from 'antd'
 import { Component, PropsWithChildren } from 'react'
 
-export default class ReloadCaptainModal extends Component<
+export default class ReloadSoteriaModal extends Component<
     PropsWithChildren<{
         isRefreshTimerActivated: boolean
     }>,
