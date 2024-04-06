@@ -10,7 +10,7 @@ Run Soteria backend service in debug mode. Change `.env.development` to match yo
 >
 > ```bash
 > apk update && apk add nodejs npm python3
-> git clone https://github.com/visca-dev/soteria.git
+> git clone https://github.com/visca-dev/soteria-container.git
 > cd soteria
 > npm i
 > npm run clean
