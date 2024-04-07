@@ -86,7 +86,7 @@ https://github.com/visca-dev/soteria/blob/master/dockerfile-soteria.release#L18
 
 ## Learn More
 
-For more details and documentation, please visit [https://Soteria.com](https://visca.dev/)
+For more details and documentation, please visit [https://visca.dev](https://visca.dev/)
 
 ## Tests
 
