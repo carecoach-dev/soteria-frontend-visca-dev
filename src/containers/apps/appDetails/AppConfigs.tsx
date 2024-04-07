@@ -549,7 +549,7 @@ export default class AppConfigs extends Component<
                             autoComplete="off"
                             autoCapitalize="off"
                             className="code-input"
-                            placeholder="var preDeployFunction = function (capRoverAppObj, dockerUpdateObject) ..."
+                            placeholder="var preDeployFunction = function (soteriaAppObj, dockerUpdateObject) ..."
                             rows={4}
                             value={
                                 app.preDeployFunction
